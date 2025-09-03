@@ -3,30 +3,31 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import data from '@/content/camaras.json';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Arcring Perú',
-    default: 'Cámaras de Seguridad | Arcring Perú'
+    template: `%s | ${data.company.name}`,
+    default: data.meta.title
   },
-  description: 'Protege tu hogar u oficina con cámaras de seguridad: Full HD, visión nocturna, grabación en la nube y conexión con central receptora.',
-  keywords: 'cámaras de seguridad, monitoreo, alarmas, Arcring Peru, seguridad hogar, videovigilancia',
-  authors: [{ name: 'Arcring Perú' }],
+  description: data.meta.description,
+  keywords: 'telecomunicaciones, seguridad, telefonía IP, cámaras de seguridad, cableado estructurado, alarmas inteligentes',
+  authors: [{ name: data.company.name }],
   robots: 'index, follow',
   openGraph: {
     type: 'website',
     locale: 'es_PE',
-    url: 'https://www.arcringperu.com',
-    title: 'Arcring Perú - Cámaras de Seguridad',
-    description: 'Protege tu hogar u oficina con cámaras de seguridad profesionales.',
-    siteName: 'Arcring Perú',
+    url: 'https://www.techsecure.com',
+    title: data.meta.title,
+    description: data.meta.description,
+    siteName: data.company.name,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Arcring Perú - Cámaras de Seguridad',
-    description: 'Protege tu hogar u oficina con cámaras de seguridad profesionales.',
+    title: data.meta.title,
+    description: data.meta.description,
   }
 };
 

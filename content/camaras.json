@@ -1,14 +1,191 @@
 {
-  "meta": {
-    "title": "Cámaras de seguridad | Arcring Perú",
-    "description": "Protege tu hogar u oficina con cámaras de seguridad: Full HD, visión nocturna, grabación en la nube y conexión con central receptora. Cotiza ahora con Arcring Perú."
+  "company": {
+    "name": "TechSecure",
+    "tagline": "Soluciones en Telecomunicaciones y Seguridad",
+    "description": "Líderes en soluciones tecnológicas para empresas y hogares en Perú. Con más de 10 años de experiencia, ofrecemos servicios integrales de telecomunicaciones y seguridad que transforman la manera en que te conectas y proteges.",
+    "experience_years": "10+",
+    "projects_completed": "500+",
+    "client_satisfaction": "95%",
+    "support": "24/7"
   },
+  "contact": {
+    "phone": "+51 987 654 321",
+    "email": "info@techsecure.com",
+    "sales_email": "ventas@techsecure.com",
+    "address": "Av. Tecnología 123, San Isidro, Lima, Perú",
+    "whatsapp": "+51 987 654 321",
+    "hours": "Lunes a Viernes: 8:00 AM - 6:00 PM"
+  },
+  "navigation": [
+    { "name": "Inicio", "href": "/" },
+    { "name": "Servicios", "href": "/servicios", "submenu": [
+      { "name": "Telefonía IP", "href": "/telefonia-ip" },
+      { "name": "Cámaras de Seguridad", "href": "/camaras-seguridad" },
+      { "name": "Cableado Estructurado", "href": "/redes-cableado" },
+      { "name": "Alarmas Inteligentes", "href": "/alarmas-inteligentes" }
+    ]},
+    { "name": "Nosotros", "href": "/nosotros" },
+    { "name": "Contacto", "href": "/contacto" }
+  ],
   "hero": {
-    "title": "Cámaras de Seguridad",
-    "subtitle": "Monitorea y protege tu hogar o negocio las 24 horas del día",
-    "cta": "Cotiza ahora",
-    "cta_secondary": "o si lo prefieres te llamamos GRATIS"
+    "slides": [
+      {
+        "title": "Soluciones Tecnológicas Integrales",
+        "description": "Transformamos tu infraestructura con tecnología de vanguardia para empresas y hogares",
+        "cta": "Conoce Nuestros Servicios",
+        "cta_link": "/servicios",
+        "image": "/images/carousel-1.jpg"
+      },
+      {
+        "title": "Telefonía IP Empresarial",
+        "description": "Revoluciona la comunicación de tu empresa con sistemas VoIP de última generación",
+        "cta": "Más Información",
+        "cta_link": "/telefonia-ip",
+        "image": "/images/carousel-2.jpg"
+      },
+      {
+        "title": "Seguridad Integral 24/7",
+        "description": "Protege tu negocio con cámaras de seguridad y alarmas inteligentes",
+        "cta": "Protege tu Negocio",
+        "cta_link": "/camaras-seguridad",
+        "image": "/images/carousel-3.jpg"
+      }
+    ]
   },
+  "services": [
+    {
+      "id": "telefonia-ip",
+      "title": "Telefonía IP",
+      "description": "Sistemas de comunicación empresarial con tecnología VoIP de última generación para optimizar la conectividad de tu negocio.",
+      "image": "/images/telefonia-ip-card.jpg",
+      "link": "/telefonia-ip",
+      "features": [
+        "Comunicación empresarial avanzada",
+        "Tecnología VoIP de última generación",
+        "Optimización de conectividad",
+        "Reducción de costos",
+        "Escalabilidad empresarial"
+      ]
+    },
+    {
+      "id": "camaras-seguridad",
+      "title": "Cámaras de Seguridad",
+      "description": "Sistemas de videovigilancia inteligente con monitoreo 24/7 para proteger tu hogar o empresa con tecnología de punta.",
+      "image": "/images/camaras-seguridad-card.jpg",
+      "link": "/camaras-seguridad",
+      "hero": {
+        "title": "Cámaras de Seguridad",
+        "description": "Protege tu negocio y hogar con nuestros sistemas de videovigilancia de última generación. Monitoreo 24/7 con tecnología de punta.",
+        "features": [
+          "Resolución 4K y Full HD",
+          "Monitoreo remoto desde cualquier dispositivo",
+          "Reconocimiento facial inteligente",
+          "Visión nocturna avanzada",
+          "Almacenamiento en la nube seguro"
+        ]
+      },
+      "features": [
+        {
+          "icon": "🎯",
+          "title": "Detección Inteligente",
+          "description": "Algoritmos de IA que distinguen entre personas, vehículos y objetos, reduciendo falsas alarmas."
+        },
+        {
+          "icon": "🌙",
+          "title": "Visión Nocturna",
+          "description": "Tecnología infrarroja que permite grabación clara incluso en completa oscuridad."
+        },
+        {
+          "icon": "📱",
+          "title": "App Móvil",
+          "description": "Monitorea en tiempo real desde tu smartphone con notificaciones instantáneas."
+        },
+        {
+          "icon": "☁️",
+          "title": "Almacenamiento en la Nube",
+          "description": "Respaldo seguro de todas tus grabaciones con acceso desde cualquier lugar."
+        },
+        {
+          "icon": "🔒",
+          "title": "Seguridad Avanzada",
+          "description": "Encriptación de datos y protocolos de seguridad de nivel empresarial."
+        },
+        {
+          "icon": "⚡",
+          "title": "Instalación Rápida",
+          "description": "Configuración profesional en menos de 24 horas con garantía completa."
+        }
+      ],
+      "benefits": [
+        {
+          "title": "Monitoreo 24/7",
+          "description": "Vigilancia continua con alertas en tiempo real para máxima seguridad."
+        },
+        {
+          "title": "Acceso Remoto",
+          "description": "Visualiza tus cámaras desde cualquier lugar del mundo con nuestra app móvil."
+        },
+        {
+          "title": "Grabación Inteligente",
+          "description": "Sistema que graba solo cuando detecta movimiento, optimizando el almacenamiento."
+        },
+        {
+          "title": "Instalación Profesional",
+          "description": "Nuestro equipo técnico garantiza una instalación perfecta y configuración óptima."
+        }
+      ]
+    },
+    {
+      "id": "cableado-estructurado",
+      "title": "Cableado Estructurado",
+      "description": "Infraestructura de red profesional con certificación internacional para garantizar conectividad confiable y escalable.",
+      "image": "/images/cableado-estructurado-card.jpg",
+      "link": "/redes-cableado",
+      "features": [
+        "Certificación internacional",
+        "Conectividad confiable",
+        "Infraestructura escalable",
+        "Instalación profesional",
+        "Garantía extendida"
+      ]
+    },
+    {
+      "id": "alarmas-inteligentes",
+      "title": "Alarmas Inteligentes",
+      "description": "Sistemas de seguridad perimetral con sensores inteligentes y notificaciones en tiempo real para máxima protección.",
+      "image": "/images/alarmas-inteligentes-card.jpg",
+      "link": "/alarmas-inteligentes",
+      "features": [
+        "Sensores inteligentes",
+        "Notificaciones en tiempo real",
+        "Seguridad perimetral",
+        "Integración con app móvil",
+        "Respuesta automática"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "icon": "⏰",
+      "number": "10+",
+      "label": "Años de experiencia"
+    },
+    {
+      "icon": "🏆",
+      "number": "500+",
+      "label": "Proyectos completados"
+    },
+    {
+      "icon": "👥",
+      "number": "95%",
+      "label": "Clientes satisfechos"
+    },
+    {
+      "icon": "🛡️",
+      "number": "24/7",
+      "label": "Soporte técnico"
+    }
+  ],
   "benefits": [
     "Conexión directa con la Central Receptora de Alarmas",
     "Acceso remoto desde la app móvil",
@@ -16,120 +193,8 @@
     "Sensor de movimiento y visión nocturna",
     "Almacenamiento seguro en la nube"
   ],
-  "types": [
-    {
-      "title": "Cámaras para interiores",
-      "features": [
-        "Visión nocturna a color",
-        "Audio bidireccional",
-        "Acceso en tiempo real",
-        "Grabación continua",
-        "Análisis inteligente"
-      ]
-    },
-    {
-      "title": "Cámaras para exteriores",
-      "features": [
-        "Resolución Full HD 1080p",
-        "Resistentes al clima (IP67)",
-        "Visión nocturna avanzada",
-        "Detección de movimiento",
-        "Sirena integrada y foco de luz"
-      ]
-    }
-  ],
-  "functions": [
-    "Visualización en directo",
-    "Grabación continua y en la nube",
-    "Detección de movimiento e intrusión",
-    "Visión nocturna a color",
-    "Sirena integrada",
-    "Audio bidireccional"
-  ],
-  "installation": [
-    "Entradas principales y pasillos",
-    "Salas y zonas comunes",
-    "Tiendas y almacenes",
-    "Locales comerciales y oficinas"
-  ],
-  "services": [
-    {
-      "title": "Instalación Profesional",
-      "description": "Instalación completa por técnicos especializados con garantía de funcionamiento",
-      "features": [
-        "Estudio de seguridad personalizado",
-        "Instalación certificada",
-        "Configuración de aplicaciones móviles",
-        "Capacitación de uso"
-      ]
-    },
-    {
-      "title": "Monitoreo 24/7",
-      "description": "Central receptora de alarmas con respuesta inmediata ante cualquier evento",
-      "features": [
-        "Monitoreo permanente",
-        "Respuesta inmediata",
-        "Coordinación con autoridades",
-        "Reportes detallados"
-      ]
-    },
-    {
-      "title": "Mantenimiento Técnico",
-      "description": "Servicio de mantenimiento preventivo y correctivo para garantizar el funcionamiento óptimo",
-      "features": [
-        "Mantenimiento preventivo",
-        "Soporte técnico remoto",
-        "Actualizaciones de software",
-        "Garantía extendida"
-      ]
-    }
-  ],
-  "faq": [
-    {
-      "q": "¿Por qué comprar cámaras de seguridad?",
-      "a": "Ofrecen vigilancia constante, disuaden delitos y proporcionan evidencia visual. Las cámaras de seguridad son una inversión que protege tu patrimonio y brinda tranquilidad a tu familia o empleados."
-    },
-    {
-      "q": "¿Dónde colocarlas?",
-      "a": "En entradas, pasillos, zonas comunes y puntos vulnerables, definido en un estudio de seguridad. Nuestros técnicos realizan una evaluación gratuita para determinar la ubicación óptima."
-    },
-    {
-      "q": "¿Cuál es el alcance?",
-      "a": "Depende del modelo; un ejemplo común es 7.5 metros visibles con claridad total. Las cámaras exteriores pueden tener mayor alcance según las especificaciones técnicas."
-    },
-    {
-      "q": "¿Cuánto duran?",
-      "a": "Entre 5 y 10 años en promedio; la empresa ofrece sustitución en garantía. Con mantenimiento adecuado, la vida útil puede extenderse significativamente."
-    },
-    {
-      "q": "¿Cuál es el precio?",
-      "a": "Varía según cantidad de cámaras, tipo de inmueble y accesorios. Se cotiza de forma personalizada considerando las necesidades específicas de seguridad."
-    },
-    {
-      "q": "¿Incluyen instalación?",
-      "a": "Sí, todos nuestros paquetes incluyen instalación profesional por técnicos certificados, configuración completa y capacitación de uso."
-    }
-  ],
-  "coverage": [
-    "Lima",
-    "Arequipa", 
-    "La Libertad",
-    "Piura",
-    "Cusco",
-    "Moquegua",
-    "Tacna",
-    "Junín",
-    "Ancash",
-    "Lambayeque"
-  ],
-  "contact": {
-    "phone": "+51 974 598 249",
-    "whatsapp": "+51974598249",
-    "email": "farias@arcringperu.com",
-    "address": "Calle Bodegones 337 - Urb. Las Gardenias - Santiago de Surco, Lima, Perú",
-    "socials": {
-      "facebook": "https://www.facebook.com/arcringperu",
-      "instagram": "https://www.instagram.com/arcringperu"
-    }
+  "meta": {
+    "title": "TechSecure | Soluciones en Telecomunicaciones y Seguridad",
+    "description": "Líderes en soluciones tecnológicas para empresas y hogares en Perú. Telefonía IP, cámaras de seguridad, cableado estructurado y más."
   }
 }

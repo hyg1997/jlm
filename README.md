@@ -15,7 +15,7 @@ Una aplicación web moderna construida con Next.js 14, TypeScript y TailwindCSS 
 ```
 ├── app/                          # App Router de Next.js
 │   ├── page.tsx                  # Página de inicio
-│   ├── camaras-de-seguridad/     # Página principal de cámaras
+│   ├── camaras-seguridad/     # Página principal de cámaras
 │   ├── servicios/                # Página de servicios
 │   ├── faq/                      # Preguntas frecuentes
 │   ├── contacto/                 # Formulario de contacto
@@ -139,6 +139,7 @@ Después de cualquier cambio, el sitio se actualizará automáticamente.
 ### Opción 3: Servicio de Email Propio
 
 Puedes integrar servicios como:
+
 - SendGrid
 - Mailgun
 - Resend

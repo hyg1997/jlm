@@ -1,172 +1,219 @@
+"use client";
+
 // Next.js imports
-import Link from 'next/link';
+import Link from "next/link";
 
 // UI Components
-import { Button } from '@/components/ui/button';
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
-} from '@/components/ui/card';
-import Image from 'next/image';
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Image from "next/image";
 
 // Icons
-import { 
-  ArrowRight,
-  Camera, 
-  CheckCircle,
-  Cloud, 
-  Eye, 
-  Phone,
-  Shield, 
-  Smartphone
-} from 'lucide-react';
+import { ArrowRight, Camera, Eye, Phone, Shield } from "lucide-react";
 
 // Data
-import data from '@/content/camaras.json';
-
-// Types
-import type { Feature } from '@/types';
+import data from "@/content/camaras.json";
+import { useState, useEffect } from "react";
 
 export default function Home(): JSX.Element {
-  const features: Feature[] = [
-    { 
-      icon: Camera, 
-      title: 'Cámaras HD', 
-      description: 'Resolución Full HD 1080p para imágenes nítidas' 
-    },
-    { 
-      icon: Eye, 
-      title: 'Visión Nocturna', 
-      description: 'Vigilancia efectiva las 24 horas del día' 
-    },
-    { 
-      icon: Smartphone, 
-      title: 'App Móvil', 
-      description: 'Monitoreo remoto desde tu smartphone' 
-    },
-    { 
-      icon: Cloud, 
-      title: 'Nube Segura', 
-      description: 'Almacenamiento protegido de grabaciones' 
-    },
-  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-advance slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % data.hero.slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % data.hero.slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + data.hero.slides.length) % data.hero.slides.length
+    );
+  };
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section 
-        className="relative h-screen min-h-[600px] bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden"
-        aria-label="Sección principal de bienvenida"
-      >
-        {/* Subtle Background Elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-subtle-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-subtle-pulse" style={{ animationDelay: '1.5s' }}></div>
-          </div>
-        
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: "url('https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg')",
-          }}
-          role="img"
-          aria-label="Imagen de fondo de sistema de seguridad"
-        ></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
-        <div className="relative z-10 h-full flex items-center animate-fade-in">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              Protege lo que{' '}
-              <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
-                más valoras
-              </span>
-            </h1>
-              <p className="text-lg md:text-xl text-slate-200 mb-8 leading-relaxed max-w-2xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              Sistemas de seguridad profesionales con monitoreo 24/7 y respuesta inmediata.
-            </p>
-            <p className="text-base md:text-lg text-slate-300 mb-10 max-w-xl animate-slide-up" style={{ animationDelay: '0.25s' }}>
-              Tecnología de vanguardia para tu tranquilidad y protección total.
-            </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 mb-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                <Link href="/contacto">
-                  <Button 
-                    variant="gradient-primary"
-                    size="lg" 
-                    className="px-10 py-5 text-lg font-bold rounded-2xl hover:scale-105"
-                  >
-                    <Phone className="h-5 w-5 mr-2" />
-                    Cotiza Gratis Ahora
-                  </Button>
-                </Link>
-                
-                <Link href="/camaras-de-seguridad">
-                  <Button 
-                    variant="outline-light" 
-                    size="lg"
-                    className="px-10 py-5 text-lg font-bold rounded-2xl"
-                  >
-                    Ver Cámaras
-                    <ArrowRight className="h-5 w-5 ml-2" />
-                  </Button>
-                </Link>
-              </div>
+      {/* Hero Carousel Section */}
+      <section className="relative h-screen min-h-[600px] overflow-hidden">
+        {data.hero.slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-30"
+              style={{
+                backgroundImage: `url('https://images.pexels.com/photos/${
+                  index === 0 ? "8566473" : index === 1 ? "5380664" : "430208"
+                }/pexels-photo-${
+                  index === 0 ? "8566473" : index === 1 ? "5380664" : "430208"
+                }.jpeg')`,
+              }}
+            ></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
 
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap gap-6 text-blue-100 animate-in fade-in duration-1000 delay-1000" role="list" aria-label="Beneficios del servicio">
-                <div className="flex items-center space-x-2" role="listitem">
-                  <CheckCircle className="h-5 w-5 text-green-400" aria-hidden="true" />
-                  <span>Instalación profesional</span>
-                </div>
-                <div className="flex items-center space-x-2" role="listitem">
-                  <CheckCircle className="h-5 w-5 text-green-400" aria-hidden="true" />
-                  <span>Garantía completa</span>
-                </div>
-                <div className="flex items-center space-x-2" role="listitem">
-                  <CheckCircle className="h-5 w-5 text-green-400" aria-hidden="true" />
-                  <span>Soporte 24/7</span>
+            <div className="relative z-10 h-full flex items-center">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-4xl">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
+                    {slide.title}
+                  </h1>
+                  <p className="text-lg md:text-xl text-slate-200 mb-8 leading-relaxed max-w-3xl">
+                    {slide.description}
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-6">
+                    <Link href={slide.cta_link}>
+                      <Button
+                        variant="gradient-primary"
+                        size="lg"
+                        className="px-10 py-5 text-lg font-bold rounded-2xl hover:scale-105"
+                      >
+                        {slide.cta}
+                        <ArrowRight className="h-5 w-5 ml-2" />
+                      </Button>
+                    </Link>
+
+                    <Link href="/contacto">
+                      <Button
+                        variant="outline-light"
+                        size="lg"
+                        className="px-10 py-5 text-lg font-bold rounded-2xl"
+                      >
+                        <Phone className="h-5 w-5 mr-2" />
+                        Cotizar Ahora
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        ))}
+
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+          {data.hero.slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                index === currentSlide ? "bg-white" : "bg-white/50"
+              }`}
+            ></button>
+          ))}
         </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 z-20 backdrop-blur-sm"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 z-20 backdrop-blur-sm"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       </section>
 
-      {/* Features Section */}
+      {/* Services Section */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 tracking-tight animate-fade-in">
-              Tecnología de Seguridad Avanzada
+              Nuestros Servicios
             </h2>
             <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-              Sistemas integrados con las últimas tecnologías para brindarte máxima protección
+              Soluciones tecnológicas completas para empresas y hogares
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <Card 
-                key={index} 
-                className="text-center border border-slate-200 hover:border-slate-300 transition-all duration-300 hover-lift bg-white group animate-scale-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {data.services.map((service, index) => (
+              <Card
+                key={service.id}
+                className="text-center border border-slate-200 hover:border-slate-300 transition-all duration-500 hover:-translate-y-2 bg-white group animate-scale-in hover:shadow-xl"
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardHeader className="pb-4 pt-8">
-                  <div className="mx-auto bg-slate-100 w-16 h-16 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300 group-hover:bg-blue-50">
-                    <feature.icon className="h-8 w-8 text-slate-700 group-hover:text-blue-600 transition-colors duration-300" />
+                  <div className="mx-auto bg-gradient-to-br from-blue-100 to-indigo-100 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    {service.id === "telefonia-ip" && (
+                      <Phone className="h-10 w-10 text-blue-700" />
+                    )}
+                    {service.id === "camaras-seguridad" && (
+                      <Camera className="h-10 w-10 text-blue-700" />
+                    )}
+                    {service.id === "cableado-estructurado" && (
+                      <Shield className="h-10 w-10 text-blue-700" />
+                    )}
+                    {service.id === "alarmas-inteligentes" && (
+                      <Eye className="h-10 w-10 text-blue-700" />
+                    )}
                   </div>
-                  <CardTitle className="text-lg font-semibold text-slate-900 mb-2">
-                    {feature.title}
+                  <CardTitle className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                    {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="pb-8 px-6">
-                  <CardDescription className="text-slate-600 text-sm leading-relaxed">
-                    {feature.description}
+                  <CardDescription className="text-slate-600 text-sm leading-relaxed mb-6">
+                    {service.description}
                   </CardDescription>
+                  <Link href={service.link}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300"
+                    >
+                      Ver Detalles
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -180,12 +227,12 @@ export default function Home(): JSX.Element {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                ¿Por qué elegir Arcring Perú?
+                ¿Por qué elegir {data.company.name}?
               </h2>
               <div className="space-y-4">
                 {data.benefits.map((benefit, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="flex items-start space-x-4 p-3 rounded-lg hover:bg-slate-50 transition-colors duration-200 group animate-scale-in"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
@@ -199,8 +246,8 @@ export default function Home(): JSX.Element {
                 ))}
               </div>
               <div className="mt-10">
-                <Link href="/camaras-de-seguridad">
-                  <Button 
+                <Link href="/camaras-seguridad">
+                  <Button
                     variant="gradient-secondary"
                     className="px-8 py-4 text-lg font-semibold rounded-xl hover:scale-105"
                   >
@@ -210,17 +257,60 @@ export default function Home(): JSX.Element {
                 </Link>
               </div>
             </div>
-            
-            <div className="relative animate-scale-in" style={{ animationDelay: '0.4s' }}>
-               <Image
-                 src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
-                 alt="Sistema de seguridad profesional"
-                 width={600}
-                 height={400}
-                 className="rounded-xl shadow-lg w-full h-[400px] object-cover hover-lift"
-                 sizes="(max-width: 768px) 100vw, 50vw"
-               />
-             </div>
+
+            <div
+              className="relative animate-scale-in"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <Image
+                src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
+                alt="Sistema de seguridad profesional"
+                width={600}
+                height={400}
+                className="rounded-xl shadow-lg w-full h-[400px] object-cover hover-lift"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
+              Números que nos Respaldan
+            </h2>
+            <p className="text-lg md:text-xl text-blue-200 max-w-2xl mx-auto leading-relaxed animate-fade-in">
+              Más de una década construyendo confianza y excelencia
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {data.stats.map((stat, index) => (
+              <div
+                key={index}
+                className="text-center animate-in fade-in slide-in-from-bottom duration-1000"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="text-5xl md:text-6xl mb-4">{stat.icon}</div>
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  {stat.number}
+                </div>
+                <div className="text-blue-200 font-medium text-lg">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -236,7 +326,7 @@ export default function Home(): JSX.Element {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
             <Link href="/contacto">
-              <Button 
+              <Button
                 variant="gradient-primary"
                 size="lg"
                 className="px-10 py-5 text-lg font-bold rounded-2xl hover:scale-105"
@@ -246,8 +336,8 @@ export default function Home(): JSX.Element {
               </Button>
             </Link>
             <Link href={`tel:${data.contact.phone}`}>
-              <Button 
-                variant="outline-light" 
+              <Button
+                variant="outline-light"
                 size="lg"
                 className="px-10 py-5 text-lg font-bold rounded-2xl hover:text-blue-700"
               >

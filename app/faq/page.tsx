@@ -12,14 +12,41 @@ export const metadata: Metadata = {
 };
 
 export default function FAQ() {
+  const faqs = [
+    {
+      q: "¿Qué servicios ofrece TechSecure?",
+      a: "Ofrecemos servicios integrales de telecomunicaciones y seguridad incluyendo Telefonía IP, Cámaras de Seguridad, Cableado Estructurado y Alarmas Inteligentes para empresas y hogares."
+    },
+    {
+      q: "¿Cómo funcionan las cámaras de seguridad?",
+      a: "Nuestras cámaras utilizan tecnología avanzada con resolución 4K y Full HD, monitoreo remoto, reconocimiento facial inteligente, visión nocturna y almacenamiento seguro en la nube."
+    },
+    {
+      q: "¿Incluyen instalación profesional?",
+      a: "Sí, todos nuestros servicios incluyen instalación profesional realizada por técnicos certificados, configuración completa y capacitación de uso."
+    },
+    {
+      q: "¿Qué garantía ofrecen?",
+      a: "Ofrecemos garantía completa en todos nuestros equipos y servicios, además de soporte técnico 24/7 para asegurar el funcionamiento óptimo de tu sistema."
+    },
+    {
+      q: "¿Cuánto tiempo toma la instalación?",
+      a: "La instalación profesional se completa en menos de 24 horas, dependiendo de la complejidad del proyecto y el número de dispositivos a instalar."
+    },
+    {
+      q: "¿Ofrecen soporte técnico?",
+      a: "Sí, contamos con soporte técnico 24/7, mantenimiento preventivo, actualizaciones de software y respuesta inmediata ante cualquier incidencia."
+    }
+  ];
+
   return (
     <div>
       <Hero
         title="Preguntas Frecuentes"
-        subtitle="Resuelve todas tus dudas sobre nuestros sistemas de seguridad"
-        cta="Contactar Asesor"
-        cta_secondary="o consulta directamente"
-        backgroundImage="https://images.pexels.com/photos/5717456/pexels-photo-5717456.jpeg"
+        subtitle="Resuelve todas tus dudas sobre nuestros servicios de seguridad"
+        cta="Contáctanos"
+        cta_secondary="¿No encuentras tu respuesta?"
+        backgroundImage="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg"
       />
 
       {/* FAQ Section */}
@@ -27,15 +54,15 @@ export default function FAQ() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
-              Dudas Más Comunes
+              Preguntas Más Frecuentes
             </h2>
             <p className="text-xl text-gray-600 animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
-              Encuentra respuestas a las preguntas que nos hacen con mayor frecuencia
+              Todo lo que necesitas saber sobre nuestros servicios
             </p>
           </div>
 
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
-            <FaqAccordion faqs={data.faq} />
+            <FaqAccordion faqs={faqs} />
           </div>
         </div>
       </section>

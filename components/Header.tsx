@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Phone, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import data from '@/content/camaras.json';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,13 +29,7 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
-  const navigation = [
-    { name: "Inicio", href: "/" },
-    { name: "Cámaras de Seguridad", href: "/camaras-de-seguridad" },
-    { name: "Servicios", href: "/servicios" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Contacto", href: "/contacto" },
-  ];
+  const navigation = data.navigation;
 
   return (
     <>
@@ -54,21 +49,44 @@ export default function Header() {
                 <div className="absolute inset-0 bg-blue-700/20 rounded-full scale-0 group-hover:scale-150 transition-transform duration-300"></div>
               </div>
               <span className="text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-700">
-                Arcring Perú
+                {data.company.name}
               </span>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex space-x-1">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="relative text-gray-700 hover:text-blue-700 px-4 py-3 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-blue-50 group"
-                >
-                  {item.name}
-                  <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
-                </Link>
+                <div key={item.name} className="relative group">
+                  <Link
+                    href={item.href}
+                    className="relative text-gray-700 hover:text-blue-700 px-4 py-3 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-blue-50 group flex items-center"
+                  >
+                    {item.name}
+                    {(item as any).submenu && (
+                      <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
+                    <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
+                  </Link>
+                  
+                  {/* Submenu */}
+                  {(item as any).submenu && (
+                    <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      <div className="py-2">
+                        {(item as any).submenu.map((subItem: any) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-4 py-3 text-sm text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
 

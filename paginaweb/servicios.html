@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | TechSecure</title>
+    <meta name="description" content="Servicios completos de telecomunicaciones y seguridad. Telefonía IP, cámaras de seguridad, cableado estructurado y alarmas inteligentes.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #8b5cf6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fbbf24;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed, #1e3a8a);
+            color: white;
+            padding: 8rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, white, #bfdbfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #bfdbfe;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f9fafb, white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 4rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid #f3f4f6;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .service-content p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .service-btn {
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Additional Services */
+        .additional-services {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .additional-card {
+            background: linear-gradient(135deg, #f8fafc, white);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .additional-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .additional-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .additional-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .additional-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #bfdbfe;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #ea580c, #dc2626);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2563eb;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">TechSecure</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Nuestros Servicios</h1>
+            <p>Soluciones tecnológicas integrales diseñadas para transformar tu infraestructura de comunicaciones y seguridad con la más alta calidad y confiabilidad</p>
+        </div>
+    </section>
+
+    <!-- Main Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Servicios <span class="gradient-text">Principales</span></h2>
+            <p class="section-subtitle">Tecnología de vanguardia para empresas y hogares</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/telefonia-ip-service.jpg" alt="Telefonía IP">
+                    </div>
+                    <div class="service-content">
+                        <h3>Telefonía IP Empresarial</h3>
+                        <p>Revoluciona la comunicación de tu empresa con nuestros sistemas de telefonía IP de última generación. Tecnología VoIP con las mejores marcas del mercado.</p>
+                        <ul class="service-features">
+                            <li>Llamadas ilimitadas nacionales e internacionales</li>
+                            <li>Calidad de audio HD cristalina</li>
+                            <li>Integración completa con sistemas CRM</li>
+                            <li>Grabación automática de llamadas</li>
+                            <li>Reportes detallados en tiempo real</li>
+                        </ul>
+                        <a href="telefonia-ip.html" class="service-btn">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/camaras-seguridad-service.jpg" alt="Cámaras de Seguridad">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cámaras de Seguridad</h3>
+                        <p>Protege tu negocio y hogar con nuestros sistemas de videovigilancia de última generación. Monitoreo 24/7 con tecnología de punta.</p>
+                        <ul class="service-features">
+                            <li>Resolución 4K y Full HD</li>
+                            <li>Monitoreo remoto desde cualquier dispositivo</li>
+                            <li>Reconocimiento facial inteligente</li>
+                            <li>Visión nocturna avanzada</li>
+                            <li>Almacenamiento en la nube seguro</li>
+                        </ul>
+                        <a href="camaras-seguridad.html" class="service-btn">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/cableado-estructurado-service.jpg" alt="Cableado Estructurado">
+                    </div>
+                    <div class="service-content">
+                        <h3>Redes y Cableado Estructurado</h3>
+                        <p>Infraestructura de red profesional que garantiza conectividad confiable y escalable para tu empresa. Tecnología de vanguardia con certificación internacional.</p>
+                        <ul class="service-features">
+                            <li>Cableado categoría 6A y 7</li>
+                            <li>Certificación OTDR profesional</li>
+                            <li>Garantía extendida de 25 años</li>
+                            <li>Fibra óptica monomodo y multimodo</li>
+                            <li>Documentación técnica completa</li>
+                        </ul>
+                        <a href="redes-cableado.html" class="service-btn">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/alarmas-inteligentes-service.jpg" alt="Alarmas Inteligentes">
+                    </div>
+                    <div class="service-content">
+                        <h3>Alarmas Inteligentes</h3>
+                        <p>Protege tu propiedad con nuestros sistemas de alarmas inteligentes de última generación. Detección temprana y respuesta inmediata ante cualquier amenaza.</p>
+                        <ul class="service-features">
+                            <li>Sensores inalámbricos de alta precisión</li>
+                            <li>Notificaciones en tiempo real</li>
+                            <li>Integración completa con cámaras</li>
+                            <li>Control total desde app móvil</li>
+                            <li>Monitoreo profesional 24/7</li>
+                        </ul>
+                        <a href="alarmas-inteligentes.html" class="service-btn">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <div class="container">
+            <h2 class="section-title">Servicios <span class="gradient-text">Adicionales</span></h2>
+            <p class="section-subtitle">Complementa tu infraestructura tecnológica</p>
+            
+            <div class="additional-grid">
+                <div class="additional-card">
+                    <div class="additional-icon">📡</div>
+                    <h3>Redes Inalámbricas</h3>
+                    <p>Diseño e implementación de redes WiFi empresariales de alto rendimiento.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">🏢</div>
+                    <h3>Centros de Datos</h3>
+                    <p>Soluciones completas para centros de datos y salas de servidores.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">🔧</div>
+                    <h3>Mantenimiento</h3>
+                    <p>Servicios de mantenimiento preventivo y correctivo para todos nuestros sistemas.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">📞</div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Asistencia técnica especializada disponible las 24 horas del día.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para transformar tu infraestructura tecnológica?</h2>
+            <p>Contáctanos hoy mismo para una consultoría gratuita y descubre cómo podemos ayudarte</p>
+            <div class="cta-buttons">
+                <a href="contacto.html" class="btn-primary">Solicitar Cotización</a>
+                <a href="tel:+51987654321" class="btn-secondary">Llamar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechSecure</h3>
+                    <p>Líderes en soluciones tecnológicas para empresas y hogares en Perú.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <a href="telefonia-ip.html">Telefonía IP</a>
+                    <a href="camaras-seguridad.html">Cámaras de Seguridad</a>
+                    <a href="redes-cableado.html">Cableado Estructurado</a>
+                    <a href="alarmas-inteligentes.html">Alarmas Inteligentes</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <a href="tel:+51987654321">+51 987 654 321</a>
+                    <a href="mailto:info@techsecure.com">info@techsecure.com</a>
+                    <p>Av. Tecnología 123, Lima</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechSecure. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/51987654321" target="_blank" class="whatsapp-btn" title="Contactar por WhatsApp">
+        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488z"/>
+        </svg>
+    </a>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | TechSecure</title>
+    <meta name="description" content="Conoce la historia, misión, visión y equipo de TechSecure. Más de 10 años liderando en soluciones tecnológicas.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #8b5cf6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fbbf24;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed, #1e3a8a);
+            color: white;
+            padding: 8rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, white, #bfdbfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #bfdbfe;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, #ea580c, #dc2626);
+            border-radius: 1.5rem;
+            transform: rotate(6deg);
+            z-index: -1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f9fafb, white);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            border-radius: 1.5rem;
+            transform: rotate(-6deg);
+            z-index: -1;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .story-content p {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #eff6ff, #e0e7ff);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 4rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid #f3f4f6;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            display: inline-flex;
+            padding: 1rem;
+            border-radius: 1rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .value-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .values-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .values-list li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid #f3f4f6;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.1);
+        }
+
+        .team-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-content h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .team-position {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-content p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed, #1e3a8a);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            text-align: center;
+        }
+
+        .achievement-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .achievement-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .achievement-icon {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .achievement-box:hover .achievement-icon {
+            transform: scale(1.1);
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, white, #bfdbfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .achievement-label {
+            color: #bfdbfe;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid,
+            .story-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">TechSecure</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Sobre TechSecure</h1>
+                    <p>Liderando la innovación en seguridad y telecomunicaciones desde hace más de una década, transformando la manera en que las empresas se conectan y protegen sus activos más valiosos.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/equipo-techsecure.jpg" alt="Equipo TechSecure">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="images/nuestra-historia.jpg" alt="Nuestra historia">
+                </div>
+                <div class="story-content">
+                    <h2>Nuestra <span class="gradient-text">Historia</span></h2>
+                    <div>
+                        <p>Fundada en 2013, TechSecure comenzó como un pequeño equipo de expertos en telecomunicaciones con una visión clara: proporcionar soluciones tecnológicas integrales y accesibles que realmente marquen la diferencia en la vida de nuestros clientes.</p>
+                        <p>Hoy somos una empresa líder en el sector, con más de 500 proyectos exitosos y una cartera de clientes satisfechos en todo Perú. Nuestro crecimiento se basa en la confianza que hemos construido día a día, proyecto tras proyecto.</p>
+                        <p>Continuamos innovando y expandiendo nuestros servicios para mantenernos a la vanguardia de la tecnología, siempre con el compromiso de ofrecer la mejor experiencia a nuestros clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros <span class="gradient-text">Pilares</span></h2>
+            <p class="section-subtitle">Lo que nos define y nos impulsa cada día</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon" style="background: linear-gradient(to right, #2563eb, #06b6d4);">
+                        🎯
+                    </div>
+                    <h3>Misión</h3>
+                    <p>Proveer soluciones tecnológicas innovadoras que garanticen seguridad y conectividad de alta calidad para empresas y hogares peruanos.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon" style="background: linear-gradient(to right, #10b981, #059669);">
+                        👁️
+                    </div>
+                    <h3>Visión</h3>
+                    <p>Ser reconocidos como el referente en soluciones integradas de seguridad y telecomunicaciones en Latinoamérica para 2030.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon" style="background: linear-gradient(to right, #8b5cf6, #ec4899);">
+                        💎
+                    </div>
+                    <h3>Valores</h3>
+                    <p>Integridad, Innovación, Excelencia y Compromiso son los pilares que guían cada una de nuestras acciones.</p>
+                    <ul class="values-list">
+                        <li>Integridad</li>
+                        <li>Innovación</li>
+                        <li>Excelencia</li>
+                        <li>Compromiso</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Conoce a <span class="gradient-text">nuestro equipo</span></h2>
+            <p class="section-subtitle">Profesionales comprometidos con tu seguridad y conectividad</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/luis-perez.jpg" alt="Luis Pérez">
+                    </div>
+                    <div class="team-content">
+                        <h3>Luis Pérez</h3>
+                        <p class="team-position">CEO & Fundador</p>
+                        <p>Ingeniero en Telecomunicaciones con más de 15 años de experiencia.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/maria-gomez.jpg" alt="María Gómez">
+                    </div>
+                    <div class="team-content">
+                        <h3>María Gómez</h3>
+                        <p class="team-position">Directora de Tecnología</p>
+                        <p>Especialista en sistemas de seguridad electrónica.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/carlos-rojas.jpg" alt="Carlos Rojas">
+                    </div>
+                    <div class="team-content">
+                        <h3>Carlos Rojas</h3>
+                        <p class="team-position">Gerente de Proyectos</p>
+                        <p>Experto en implementación de soluciones integradas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros <span style="background: linear-gradient(to right, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Logros</span></h2>
+            <p class="section-subtitle">Números que respaldan nuestra experiencia y compromiso</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-box">
+                        <div class="achievement-icon">⏰</div>
+                        <h3 class="achievement-number">10+</h3>
+                        <p class="achievement-label">Años de experiencia</p>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-box">
+                        <div class="achievement-icon">🏆</div>
+                        <h3 class="achievement-number">500+</h3>
+                        <p class="achievement-label">Proyectos completados</p>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-box">
+                        <div class="achievement-icon">👥</div>
+                        <h3 class="achievement-number">95%</h3>
+                        <p class="achievement-label">Clientes satisfechos</p>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-box">
+                        <div class="achievement-icon">🛡️</div>
+                        <h3 class="achievement-number">24/7</h3>
+                        <p class="achievement-label">Soporte técnico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechSecure</h3>
+                    <p>Líderes en soluciones tecnológicas para empresas y hogares en Perú.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <a href="servicios.html#telefonia">Telefonía IP</a>
+                    <a href="servicios.html#camaras">Cámaras de Seguridad</a>
+                    <a href="servicios.html#redes">Cableado Estructurado</a>
+                    <a href="servicios.html#alarmas">Alarmas Inteligentes</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <a href="tel:+51987654321">+51 987 654 321</a>
+                    <a href="mailto:info@techsecure.com">info@techsecure.com</a>
+                    <p>Av. Tecnología 123, Lima</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechSecure. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/51987654321" target="_blank" class="whatsapp-btn" title="Contactar por WhatsApp">
+        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488z"/>
+        </svg>
+    </a>
+</body>
+</html>

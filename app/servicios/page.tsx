@@ -70,7 +70,7 @@ export default function Servicios() {
                             <CheckCircle className="h-4 w-4 text-green-600" />
                           </div>
                           <span className="text-gray-700 group-hover/item:text-gray-900 transition-colors duration-300">
-                            {feature}
+                            {typeof feature === 'string' ? feature : feature.title || feature.description}
                           </span>
                         </li>
                       ))}
@@ -83,23 +83,25 @@ export default function Servicios() {
         </div>
       </section>
 
-      {/* Coverage Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Stats Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Cobertura a Nivel Nacional
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
+              Números que nos Respaldan
             </h2>
-            <p className="text-xl text-gray-600">
-              Brindamos nuestros servicios en las principales ciudades del Perú
+            <p className="text-xl text-gray-600 animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
+              Experiencia y confianza comprobada en el mercado
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
-            {data.coverage.map((city, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {data.stats.map((stat, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg text-gray-900">{city}</h3>
+                <CardContent className="p-8">
+                  <div className="text-4xl mb-4">{stat.icon}</div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
                 </CardContent>
               </Card>
             ))}

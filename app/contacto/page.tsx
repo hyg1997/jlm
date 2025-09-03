@@ -7,8 +7,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Facebook,
-  Instagram,
   MessageSquare,
 } from "lucide-react";
 import Link from "next/link";
@@ -159,30 +157,7 @@ export default function Contacto() {
                 </Card>
               </div>
 
-              {/* Social Media */}
-              <div className="animate-in fade-in slide-in-from-left duration-1000 delay-700">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Síguenos en Redes Sociales
-                </h3>
-                <div className="flex space-x-6">
-                  <Link
-                    href={data.contact.socials.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white p-4 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
-                  >
-                    <Facebook className="h-7 w-7" />
-                  </Link>
-                  <Link
-                    href={data.contact.socials.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-br from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white p-4 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
-                  >
-                    <Instagram className="h-7 w-7" />
-                  </Link>
-                </div>
-              </div>
+
             </div>
 
             {/* Contact Form */}

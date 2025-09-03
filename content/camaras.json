@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "title": "Cámaras de seguridad | Arcring Perú",
+    "description": "Protege tu hogar u oficina con cámaras de seguridad: Full HD, visión nocturna, grabación en la nube y conexión con central receptora. Cotiza ahora con Arcring Perú."
+  },
+  "hero": {
+    "title": "Cámaras de Seguridad",
+    "subtitle": "Monitorea y protege tu hogar o negocio las 24 horas del día",
+    "cta": "Cotiza ahora",
+    "cta_secondary": "o si lo prefieres te llamamos GRATIS"
+  },
+  "benefits": [
+    "Conexión directa con la Central Receptora de Alarmas",
+    "Acceso remoto desde la app móvil",
+    "Grabación en alta definición",
+    "Sensor de movimiento y visión nocturna",
+    "Almacenamiento seguro en la nube"
+  ],
+  "types": [
+    {
+      "title": "Cámaras para interiores",
+      "features": [
+        "Visión nocturna a color",
+        "Audio bidireccional",
+        "Acceso en tiempo real",
+        "Grabación continua",
+        "Análisis inteligente"
+      ]
+    },
+    {
+      "title": "Cámaras para exteriores",
+      "features": [
+        "Resolución Full HD 1080p",
+        "Resistentes al clima (IP67)",
+        "Visión nocturna avanzada",
+        "Detección de movimiento",
+        "Sirena integrada y foco de luz"
+      ]
+    }
+  ],
+  "functions": [
+    "Visualización en directo",
+    "Grabación continua y en la nube",
+    "Detección de movimiento e intrusión",
+    "Visión nocturna a color",
+    "Sirena integrada",
+    "Audio bidireccional"
+  ],
+  "installation": [
+    "Entradas principales y pasillos",
+    "Salas y zonas comunes",
+    "Tiendas y almacenes",
+    "Locales comerciales y oficinas"
+  ],
+  "services": [
+    {
+      "title": "Instalación Profesional",
+      "description": "Instalación completa por técnicos especializados con garantía de funcionamiento",
+      "features": [
+        "Estudio de seguridad personalizado",
+        "Instalación certificada",
+        "Configuración de aplicaciones móviles",
+        "Capacitación de uso"
+      ]
+    },
+    {
+      "title": "Monitoreo 24/7",
+      "description": "Central receptora de alarmas con respuesta inmediata ante cualquier evento",
+      "features": [
+        "Monitoreo permanente",
+        "Respuesta inmediata",
+        "Coordinación con autoridades",
+        "Reportes detallados"
+      ]
+    },
+    {
+      "title": "Mantenimiento Técnico",
+      "description": "Servicio de mantenimiento preventivo y correctivo para garantizar el funcionamiento óptimo",
+      "features": [
+        "Mantenimiento preventivo",
+        "Soporte técnico remoto",
+        "Actualizaciones de software",
+        "Garantía extendida"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué comprar cámaras de seguridad?",
+      "a": "Ofrecen vigilancia constante, disuaden delitos y proporcionan evidencia visual. Las cámaras de seguridad son una inversión que protege tu patrimonio y brinda tranquilidad a tu familia o empleados."
+    },
+    {
+      "q": "¿Dónde colocarlas?",
+      "a": "En entradas, pasillos, zonas comunes y puntos vulnerables, definido en un estudio de seguridad. Nuestros técnicos realizan una evaluación gratuita para determinar la ubicación óptima."
+    },
+    {
+      "q": "¿Cuál es el alcance?",
+      "a": "Depende del modelo; un ejemplo común es 7.5 metros visibles con claridad total. Las cámaras exteriores pueden tener mayor alcance según las especificaciones técnicas."
+    },
+    {
+      "q": "¿Cuánto duran?",
+      "a": "Entre 5 y 10 años en promedio; la empresa ofrece sustitución en garantía. Con mantenimiento adecuado, la vida útil puede extenderse significativamente."
+    },
+    {
+      "q": "¿Cuál es el precio?",
+      "a": "Varía según cantidad de cámaras, tipo de inmueble y accesorios. Se cotiza de forma personalizada considerando las necesidades específicas de seguridad."
+    },
+    {
+      "q": "¿Incluyen instalación?",
+      "a": "Sí, todos nuestros paquetes incluyen instalación profesional por técnicos certificados, configuración completa y capacitación de uso."
+    }
+  ],
+  "coverage": [
+    "Lima",
+    "Arequipa", 
+    "La Libertad",
+    "Piura",
+    "Cusco",
+    "Moquegua",
+    "Tacna",
+    "Junín",
+    "Ancash",
+    "Lambayeque"
+  ],
+  "contact": {
+    "phone": "+51 974 598 249",
+    "whatsapp": "+51974598249",
+    "email": "farias@arcringperu.com",
+    "address": "Calle Bodegones 337 - Urb. Las Gardenias - Santiago de Surco, Lima, Perú",
+    "socials": {
+      "facebook": "https://www.facebook.com/arcringperu",
+      "instagram": "https://www.instagram.com/arcringperu"
+    }
+  }
+}

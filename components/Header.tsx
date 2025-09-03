@@ -190,9 +190,9 @@ export default function Header() {
                   <p className="text-gray-600">O contáctanos directamente:</p>
                   <div className="space-y-2">
                     <p className="text-lg font-semibold text-gray-900">
-                      +51 974 598 249
+                      {data.contact.phone}
                     </p>
-                    <p className="text-gray-600">farias@arcringperu.com</p>
+                    <p className="text-gray-600">{data.contact.email}</p>
                   </div>
                 </div>
               </div>

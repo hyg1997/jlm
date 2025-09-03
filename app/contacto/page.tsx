@@ -26,7 +26,7 @@ export default function Contacto() {
         subtitle="Recibe asesoría personalizada de nuestros expertos en seguridad"
         cta="Llamar Ahora"
         cta_secondary="WhatsApp"
-        backgroundImage="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg"
+        backgroundImage={data.images.hero.contact}
         showSecondary={false}
       />
 

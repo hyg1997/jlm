@@ -8,13 +8,13 @@ import data from '@/content/camaras.json';
 
 export const metadata: Metadata = {
   title: 'Preguntas Frecuentes - FAQ',
-  description: 'Resuelve todas tus dudas sobre cámaras de seguridad, instalación, precios y servicios de Arcring Perú.',
+  description: `Resuelve todas tus dudas sobre cámaras de seguridad, instalación, precios y servicios de ${data.company.name}.`,
 };
 
 export default function FAQ() {
   const faqs = [
     {
-      q: "¿Qué servicios ofrece TechSecure?",
+      q: `¿Qué servicios ofrece ${data.company.name}?`,
       a: "Ofrecemos servicios integrales de telecomunicaciones y seguridad incluyendo Telefonía IP, Cámaras de Seguridad, Cableado Estructurado y Alarmas Inteligentes para empresas y hogares."
     },
     {
@@ -46,7 +46,7 @@ export default function FAQ() {
         subtitle="Resuelve todas tus dudas sobre nuestros servicios de seguridad"
         cta="Contáctanos"
         cta_secondary="¿No encuentras tu respuesta?"
-        backgroundImage="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg"
+        backgroundImage={data.images.hero.faq}
       />
 
       {/* FAQ Section */}

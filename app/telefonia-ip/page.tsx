@@ -37,7 +37,7 @@ export default function TelefoniaIP() {
         subtitle={telefoniaService?.description || 'Sistemas de comunicación empresarial avanzados'}
         cta="Solicitar Cotización"
         cta_secondary="o contáctanos para más información"
-        backgroundImage="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
+        backgroundImage={data.images.hero.technology}
       />
 
       {/* Features Section */}

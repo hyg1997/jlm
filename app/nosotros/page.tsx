@@ -36,7 +36,7 @@ export default function Nosotros() {
         subtitle={data.company.tagline}
         cta="Contáctanos"
         cta_secondary="Descubre nuestros servicios"
-        backgroundImage="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+        backgroundImage={data.images.hero.team}
       />
 
       {/* About Section */}
@@ -75,8 +75,8 @@ export default function Nosotros() {
             
             <div className="relative animate-scale-in">
               <Image
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
-                alt="Equipo de TechSecure"
+                src={data.images.content.team_photo}
+                alt={`Equipo de ${data.company.name}`}
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"

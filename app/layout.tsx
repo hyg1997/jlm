@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_PE',
-    url: 'https://www.techsecure.com',
+    url: data.contact.website,
     title: data.meta.title,
     description: data.meta.description,
     siteName: data.company.name,
@@ -42,13 +42,13 @@ export default function RootLayout({
         {/* Preload critical resources */}
         <link
           rel="preload"
-          href="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg"
+          href={data.images.hero.security}
           as="image"
           type="image/jpeg"
         />
         <link
           rel="preload"
-          href="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
+          href={data.images.hero.technology}
           as="image"
           type="image/jpeg"
         />

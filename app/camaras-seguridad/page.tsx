@@ -34,7 +34,7 @@ export default function CamarasDeSeguridad() {
         subtitle={cameraService?.hero?.description || 'Protege tu negocio y hogar'}
         cta="Solicitar Cotización"
         cta_secondary="o contáctanos para más información"
-        backgroundImage="https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg"
+        backgroundImage={data.images.hero.cameras}
       />
 
       {/* Features Section */}

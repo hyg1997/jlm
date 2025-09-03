@@ -38,7 +38,7 @@ export default function RedesCableado() {
         subtitle={cableadoService?.description || 'Infraestructura de red profesional y certificada'}
         cta="Solicitar Cotización"
         cta_secondary="o contáctanos para más información"
-        backgroundImage="https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg"
+        backgroundImage={data.images.hero.networking}
       />
 
       {/* Features Section */}

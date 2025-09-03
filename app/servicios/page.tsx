@@ -27,7 +27,7 @@ export default function Servicios() {
         subtitle="Soluciones integrales de seguridad con el respaldo de profesionales certificados"
         cta="Cotiza ahora"
         cta_secondary="Consulta sin compromiso"
-        backgroundImage="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
+        backgroundImage={data.images.hero.technology}
       />
 
       {/* Services Section */}

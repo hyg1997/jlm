@@ -39,7 +39,7 @@ export default function AlarmasInteligentes() {
         subtitle={alarmasService?.description || 'Sistemas de seguridad perimetral avanzados'}
         cta="Solicitar Cotización"
         cta_secondary="o contáctanos para más información"
-        backgroundImage="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg"
+        backgroundImage={data.images.hero.security}
       />
 
       {/* Features Section */}

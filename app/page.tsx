@@ -61,11 +61,7 @@ export default function Home(): JSX.Element {
             <div
               className="absolute inset-0 bg-cover bg-center opacity-30"
               style={{
-                backgroundImage: `url('https://images.pexels.com/photos/${
-                  index === 0 ? "8566473" : index === 1 ? "5380664" : "430208"
-                }/pexels-photo-${
-                  index === 0 ? "8566473" : index === 1 ? "5380664" : "430208"
-                }.jpeg')`,
+                backgroundImage: `url('${index === 0 ? data.images.hero.security : index === 1 ? data.images.hero.technology : data.images.hero.cameras}')`,
               }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
@@ -99,7 +95,7 @@ export default function Home(): JSX.Element {
                         className="px-10 py-5 text-lg font-bold rounded-2xl"
                       >
                         <Phone className="h-5 w-5 mr-2" />
-                        Cotizar Ahora
+                        {data.texts.cta.quote_now}
                       </Button>
                     </Link>
                   </div>
@@ -263,8 +259,8 @@ export default function Home(): JSX.Element {
               style={{ animationDelay: "0.4s" }}
             >
               <Image
-                src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg"
-                alt="Sistema de seguridad profesional"
+                 src={data.images.content.security_system}
+                 alt="Sistema de seguridad profesional"
                 width={600}
                 height={400}
                 className="rounded-xl shadow-lg w-full h-[400px] object-cover hover-lift"
@@ -322,7 +318,7 @@ export default function Home(): JSX.Element {
             ¿Listo para proteger tu propiedad?
           </h2>
           <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-            Obtén una cotización personalizada sin compromiso
+            {data.texts.messages.quote_personalized}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
             <Link href="/contacto">
@@ -332,7 +328,7 @@ export default function Home(): JSX.Element {
                 className="px-10 py-5 text-lg font-bold rounded-2xl hover:scale-105"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Cotizar Ahora
+                {data.texts.cta.quote_now}
               </Button>
             </Link>
             <Link href={`tel:${data.contact.phone}`}>
@@ -341,7 +337,7 @@ export default function Home(): JSX.Element {
                 size="lg"
                 className="px-10 py-5 text-lg font-bold rounded-2xl hover:text-blue-700"
               >
-                Llamar Directamente
+                {data.texts.cta.call_directly}
               </Button>
             </Link>
           </div>

@@ -14,7 +14,8 @@
     "sales_email": "ventas@techsecure.com",
     "address": "Av. Tecnología 123, San Isidro, Lima, Perú",
     "whatsapp": "+51 987 654 321",
-    "hours": "Lunes a Viernes: 8:00 AM - 6:00 PM"
+    "hours": "Lunes a Viernes: 8:00 AM - 6:00 PM",
+    "website": "https://www.techsecure.com"
   },
   "navigation": [
     { "name": "Inicio", "href": "/" },
@@ -193,6 +194,41 @@
     "Sensor de movimiento y visión nocturna",
     "Almacenamiento seguro en la nube"
   ],
+  "texts": {
+    "cta": {
+      "primary": "Solicitar Cotización",
+      "secondary": "o contáctanos para más información",
+      "call_now": "Llamar Ahora",
+      "quote_now": "Cotizar Ahora",
+      "whatsapp": "WhatsApp",
+      "more_info": "Más Información",
+      "request_demo": "Solicitar Demo",
+      "call_directly": "Llamar Directamente",
+      "free_evaluation": "Evaluación Gratuita"
+    },
+    "messages": {
+      "quote_personalized": "Obtén una cotización personalizada sin compromiso",
+      "free_demo": "Obtén una demostración gratuita de nuestro sistema de telefonía IP",
+      "security_evaluation": "Obtén una evaluación gratuita de seguridad para tu hogar o empresa",
+      "network_evaluation": "Obtén una evaluación gratuita de tu infraestructura de red actual",
+      "contact_advice": "Contáctanos para recibir asesoría personalizada sobre cámaras de seguridad. Llamadas, WhatsApp, email disponible."
+    }
+  },
+  "images": {
+    "hero": {
+      "security": "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg",
+      "technology": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg",
+      "cameras": "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg",
+      "networking": "https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg",
+      "team": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+      "contact": "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
+      "faq": "https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg"
+    },
+    "content": {
+      "security_system": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg",
+      "team_photo": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+    }
+  },
   "meta": {
     "title": "TechSecure | Soluciones en Telecomunicaciones y Seguridad",
     "description": "Líderes en soluciones tecnológicas para empresas y hogares en Perú. Telefonía IP, cámaras de seguridad, cableado estructurado y más."

@@ -1,22 +1,23 @@
-import type { Metadata } from 'next';
-import Hero from '@/components/Hero';
-import ContactForm from '@/components/ContactForm';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Facebook, 
+import type { Metadata } from "next";
+import Hero from "@/components/Hero";
+import ContactForm from "@/components/ContactForm";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Facebook,
   Instagram,
-  MessageSquare
-} from 'lucide-react';
-import Link from 'next/link';
-import data from '@/content/camaras.json';
+  MessageSquare,
+} from "lucide-react";
+import Link from "next/link";
+import data from "@/content/camaras.json";
 
 export const metadata: Metadata = {
-  title: 'Contacto',
-  description: 'Contáctanos para recibir asesoría personalizada sobre cámaras de seguridad. Llamadas, WhatsApp, email disponible.',
+  title: "Contacto",
+  description:
+    "Contáctanos para recibir asesoría personalizada sobre cámaras de seguridad. Llamadas, WhatsApp, email disponible.",
 };
 
 export default function Contacto() {
@@ -42,7 +43,7 @@ export default function Contacto() {
                   Información de Contacto
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Estamos aquí para ayudarte a proteger lo que más valoras. 
+                  Estamos aquí para ayudarte a proteger lo que más valoras.
                   Contáctanos por el medio que prefieras.
                 </p>
               </div>
@@ -59,7 +60,7 @@ export default function Contacto() {
                         <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
                           Teléfono
                         </h3>
-                        <Link 
+                        <Link
                           href={`tel:${data.contact.phone}`}
                           className="text-blue-700 hover:text-blue-800 font-semibold text-lg transition-colors duration-300"
                         >
@@ -81,7 +82,7 @@ export default function Contacto() {
                         <h3 className="font-bold text-lg text-gray-900 group-hover:text-green-700 transition-colors duration-300">
                           Email
                         </h3>
-                        <Link 
+                        <Link
                           href={`mailto:${data.contact.email}`}
                           className="text-green-700 hover:text-green-800 font-semibold text-lg transition-colors duration-300"
                         >
@@ -103,7 +104,7 @@ export default function Contacto() {
                         <h3 className="font-bold text-lg text-gray-900 group-hover:text-green-700 transition-colors duration-300">
                           WhatsApp
                         </h3>
-                        <Link 
+                        <Link
                           href={`https://wa.me/${data.contact.whatsapp}`}
                           target="_blank"
                           className="text-green-700 hover:text-green-800 font-semibold text-lg transition-colors duration-300"
@@ -126,7 +127,9 @@ export default function Contacto() {
                         <h3 className="font-bold text-lg text-gray-900 group-hover:text-orange-700 transition-colors duration-300 mb-2">
                           Dirección
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">{data.contact.address}</p>
+                        <p className="text-gray-600 leading-relaxed">
+                          {data.contact.address}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -146,7 +149,9 @@ export default function Contacto() {
                         <div className="text-gray-600">
                           <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
                           <p>Sábados: 8:00 AM - 2:00 PM</p>
-                          <p className="text-sm text-orange-600 font-bold mt-1">Emergencias 24/7</p>
+                          <p className="text-sm text-orange-600 font-bold mt-1">
+                            Emergencias 24/7
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -156,9 +161,11 @@ export default function Contacto() {
 
               {/* Social Media */}
               <div className="animate-in fade-in slide-in-from-left duration-1000 delay-700">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Síguenos en Redes Sociales</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Síguenos en Redes Sociales
+                </h3>
                 <div className="flex space-x-6">
-                  <Link 
+                  <Link
                     href={data.contact.socials.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -166,7 +173,7 @@ export default function Contacto() {
                   >
                     <Facebook className="h-7 w-7" />
                   </Link>
-                  <Link 
+                  <Link
                     href={data.contact.socials.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
